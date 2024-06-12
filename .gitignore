@@ -190,6 +190,7 @@ dist
 .svelte-kit
 
 ### Terraform ###
+.terraform.lock.hcl
 # Local .terraform directories
 **/.terraform/*
 

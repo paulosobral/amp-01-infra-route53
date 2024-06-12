@@ -1,15 +1,11 @@
-variable "vpc_name" {
+variable "amp_domain_name_value" {
   type = string
 }
 
-variable "vpc_cidr" {
+variable "txt_zoho_verification_value" {
   type = string
 }
 
-variable "subnet_azs" {
-  type = list(string)
-}
-
-variable "public_subnets" {
+variable "mx_zoho_verification_values" {
   type = list(string)
 }
