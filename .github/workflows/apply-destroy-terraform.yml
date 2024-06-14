@@ -22,15 +22,15 @@ jobs:
         uses: actions/checkout@v3
       - name: Terraform init
         run: |
-          cd ${{ github.workspace }} && terraform init
+          cd ${{ github.workspace }}/infra && terraform init
       - name: Terraform validate
         run: terraform validate
       - name: Terraform plan
-        run: terraform plan -var-file="terraform.tfvars"
+        run: terraform plan
       - name: Check Terraform apply or Terraform destroy
         run: |
           if grep 'destroy: true' destroy.yml ; then
-            terraform destroy -var-file="terraform.tfvars" --auto-approve
+            terraform destroy --auto-approve
           else
-            terraform apply -var-file="terraform.tfvars" --auto-approve
+            terraform apply --auto-approve
           fi
