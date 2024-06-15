@@ -7,7 +7,7 @@ resource "aws_route53_record" "txt_zoho_verification" {
   zone_id = aws_route53_zone.amp_zone.zone_id
   name    = ""
   type    = "TXT"
-  ttl     = 300
+  ttl     = 60
   records = [var.txt_zoho_verification_value]
 }
 
@@ -25,7 +25,7 @@ resource "aws_route53_record" "txt_zoho_spf" {
   zone_id = aws_route53_zone.amp_zone.zone_id
   name    = "@"
   type    = "TXT"
-  ttl     = 300
+  ttl     = 60
   records = [var.txt_zoho_spf_value]
 }
 
@@ -34,6 +34,6 @@ resource "aws_route53_record" "txt_zoho_dkim" {
   zone_id = aws_route53_zone.amp_zone.zone_id
   name    = "@"
   type    = "TXT"
-  ttl     = 300
+  ttl     = 60
   records = [var.txt_zoho_dkim_value]
 }
