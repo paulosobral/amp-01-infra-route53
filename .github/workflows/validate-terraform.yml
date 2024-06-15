@@ -12,6 +12,9 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           # AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
           AWS_DEFAULT_REGION: us-east-1
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Install Terraform
         run: |
@@ -22,11 +25,11 @@ jobs:
         uses: actions/checkout@v3
       - name: Terraform init
         run: |
-          cd ${{ github.workspace }} && terraform init
+          cd ${{ github.workspace }}/infra && terraform init
       - name: Terraform validate
         run: terraform validate
       - name: Terraform plan
-        run: terraform plan
+        run: cd ${{ github.workspace }}/infra && terraform plan
       - name: Pull-request branch to main
         uses: repo-sync/pull-request@v2
         with:
