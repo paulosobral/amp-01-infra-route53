@@ -1,4 +1,4 @@
-name: Terraform Validate Feature Branch Pipeline
+name: "[Feature] Terraform Validate Feature Branch Pipeline"
 run-name: User ${{ github.actor }} is validating terraform on branch ${{ github.ref }}
 on:
   push:
@@ -12,9 +12,6 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           # AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
           AWS_DEFAULT_REGION: us-east-1
-    permissions:
-      contents: write
-      pull-requests: write
     steps:
       - name: Install Terraform
         run: |
