@@ -26,7 +26,7 @@ resource "aws_route53_record" "txt_zoho_spf" {
   name    = "@"
   type    = "TXT"
   ttl     = 300
-  records = ["\"v=spf1 include:zohomail.com ~all\""]
+  records = [var.txt_zoho_spf_value]
 }
 
 # TXT DomainKeys Identified Mail (DKIM) Email Settings
@@ -35,5 +35,5 @@ resource "aws_route53_record" "txt_zoho_dkim" {
   name    = "@"
   type    = "TXT"
   ttl     = 300
-  records = ["\"v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCDFqAzDsdqq1MiDh5fnGtiOzbiP5r/4AFo4Ki/zyEkNB/VH7misUPxUUELRJNLLV7wfwys6zzN6rGc88vz+Ophm1htPs6KT+pvjQe4DMbl0EwB1M6NhtH7mTUZN/w3HARLYEbjR46sXZSHiNrmyRPQGJFyPVOVBOzBIKy/KA9iCwIDAQAB\""]
+  records = [var.txt_zoho_dkim_value]
 }
