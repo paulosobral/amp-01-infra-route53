@@ -1,4 +1,4 @@
-name: Terraform Apply or Destroy Branch Main
+name: "[Main] Terraform Apply or Destroy Branch Main"
 run-name: User ${{ github.actor }} is applying or destroying terraform on branch ${{ github.ref }}
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
       - name: Check Terraform apply or Terraform destroy
         run: |
           if grep 'destroy: true' destroy.yml ; then
-            terraform destroy --auto-approve
+            cd ${{ github.workspace }}/infra && terraform destroy --auto-approve
           else
             terraform apply --auto-approve
           fi
