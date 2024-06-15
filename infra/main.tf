@@ -1,10 +1,10 @@
-resource "aws_route53_zone" "amp" {
+resource "aws_route53_zone" "amp_zone" {
   name = var.amp_domain_name_value
 }
 
 # TXT Zoho Verification
 resource "aws_route53_record" "txt_zoho_verification" {
-  zone_id = aws_route53_zone.amp.zone_id
+  zone_id = aws_route53_zone.amp_zone.zone_id
   name    = ""
   type    = "TXT"
   ttl     = 300
@@ -13,7 +13,7 @@ resource "aws_route53_record" "txt_zoho_verification" {
 
 # MX Zoho Email Settings
 resource "aws_route53_record" "mx_zoho_verification" {
-  zone_id = aws_route53_zone.amp.zone_id
+  zone_id = aws_route53_zone.amp_zone.zone_id
   name    = "@"
   type    = "MX"
   ttl     = 60
@@ -22,7 +22,7 @@ resource "aws_route53_record" "mx_zoho_verification" {
 
 # TXT Sender Policy Framework (SPF) Email Settings
 resource "aws_route53_record" "txt_zoho_spf" {
-  zone_id = aws_route53_zone.amp.zone_id
+  zone_id = aws_route53_zone.amp_zone.zone_id
   name    = "@"
   type    = "TXT"
   ttl     = 300
@@ -31,7 +31,7 @@ resource "aws_route53_record" "txt_zoho_spf" {
 
 # TXT DomainKeys Identified Mail (DKIM) Email Settings
 resource "aws_route53_record" "txt_zoho_dkim" {
-  zone_id = aws_route53_zone.amp.zone_id
+  zone_id = aws_route53_zone.amp_zone.zone_id
   name    = "@"
   type    = "TXT"
   ttl     = 300
