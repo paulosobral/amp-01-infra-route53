@@ -14,6 +14,10 @@ variable "txt_zoho_spf_value" {
   type = string
 }
 
+variable "txt_zoho_dkim_name" {
+  type = string
+}
+
 variable "txt_zoho_dkim_value" {
   type = string
 }
