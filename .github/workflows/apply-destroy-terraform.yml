@@ -29,8 +29,8 @@ jobs:
         run: cd ${{ github.workspace }}/infra && terraform plan
       - name: Check Terraform apply or Terraform destroy
         run: |
-          if grep 'destroy: true' destroy.yml ; then
+          if grep 'destroy: true' ${{ github.workspace }}/infra/destroy.yml ; then
             cd ${{ github.workspace }}/infra && terraform destroy --auto-approve
           else
-            terraform apply --auto-approve
+            cd ${{ github.workspace }}/infra && terraform apply --auto-approve
           fi
