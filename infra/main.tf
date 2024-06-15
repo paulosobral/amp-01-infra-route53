@@ -3,13 +3,13 @@ resource "aws_route53_zone" "amp_zone" {
 }
 
 # TXT Zoho Verification
-resource "aws_route53_record" "txt_zoho_verification" {
-  zone_id = aws_route53_zone.amp_zone.zone_id
-  name    = ""
-  type    = "TXT"
-  ttl     = 60
-  records = [var.txt_zoho_verification_value]
-}
+# resource "aws_route53_record" "txt_zoho_verification" {
+#   zone_id = aws_route53_zone.amp_zone.zone_id
+#   name    = ""
+#   type    = "TXT"
+#   ttl     = 60
+#   records = [var.txt_zoho_verification_value]
+# }
 
 # MX Zoho Email Settings
 resource "aws_route53_record" "mx_zoho_verification" {
@@ -32,7 +32,7 @@ resource "aws_route53_record" "txt_zoho_spf" {
 # TXT DomainKeys Identified Mail (DKIM) Email Settings
 resource "aws_route53_record" "txt_zoho_dkim" {
   zone_id = aws_route53_zone.amp_zone.zone_id
-  name    = "@"
+  name    = var.txt_zoho_dkim_name
   type    = "TXT"
   ttl     = 60
   records = [var.txt_zoho_dkim_value]
