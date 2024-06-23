@@ -1,8 +1,8 @@
 # Infra Route53
 
-[![Terraform Validate Pipeline](https://github.com/paulosobral/digital-product-bootcamp-ec2-iac/actions/workflows/validate-terraform.yml/badge.svg)](https://github.com/paulosobral/amp-01-infra-route53/actions/wokflows/01-feature.yml)
+[![[Feature] Terraform Validate Feature Branch Pipeline](https://github.com/paulosobral/amp-01-infra-route53/actions/workflows/01-feature.yml/badge.svg)](https://github.com/paulosobral/amp-01-infra-route53/actions/workflows/01-feature.yml)
 
-[![Terraform Validate Pipeline](https://github.com/paulosobral/digital-product-bootcamp-ec2-iac/actions/workflows/apply-destroy-terraform.yml/badge.svg)](https://github.com/paulosobral/amp-01-infra-route53/actions/wokflows/02-main.yml)
+[![[Main] Terraform Apply or Destroy Branch Main](https://github.com/paulosobral/amp-01-infra-route53/actions/workflows/02-main.yml/badge.svg)](https://github.com/paulosobral/amp-01-infra-route53/actions/workflows/02-main.yml)
 
 ## AMP
 
