@@ -6,4 +6,4 @@ on:
       - 'feature/**'
 jobs:
   reuse-workflow:
-    uses: paulosobral/amp-02-infra-reusable/.github/workflows/simple-infra-validate-terraform.yml@v1.0
+    uses: paulosobral/amp-02-infra-reusable/simple-infra/validate-terraform.yml@v1.0
