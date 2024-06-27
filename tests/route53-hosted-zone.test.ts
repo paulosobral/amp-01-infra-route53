@@ -1,4 +1,5 @@
 import { Route53Client, ListHostedZonesCommand } from "@aws-sdk/client-route-53";
+import { expect, describe, beforeAll, it } from '@jest/globals';
 
 // Função auxiliar para verificar a existência de uma zona hospedada
 async function hostedZoneExists(client: Route53Client, zoneName: string): Promise<boolean> {
@@ -16,7 +17,7 @@ describe('Route 53 Hosted Zone Existence Check', () => {
   });
 
   it('should check if a hosted zone exists', async () => {
-    const zoneName = 'asmelhorespousadas.com.br'; // Substitua pelo nome da zona hospedada que você quer verificar
+    const zoneName = 'asmelhorespousadas.com.br.'; // Substitua pelo nome da zona hospedada que você quer verificar (note o ponto no final)
 
     const exists = await hostedZoneExists(client, zoneName);
 

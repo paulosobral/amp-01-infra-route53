@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx jest --config=./jest.config.js --verbose --runInBand --collectCoverage --reporters=jest-junit"
+    "test": "npx jest --config=./jest.config.js --verbose --useStderr --runInBand --reporters=jest-junit"
   },
   "keywords": [],
   "author": "Paulo Sobral",
