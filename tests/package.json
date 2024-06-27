@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --reporters=jest-junit"
+    "test": "npx jest --config=./jest.config.js --verbose --runInBand --collectCoverage --reporters=jest-junit"
   },
   "keywords": [],
   "author": "Paulo Sobral",
@@ -15,5 +15,8 @@
     "jest-junit": "^16.0.0",
     "ts-jest": "^29.1.5",
     "typescript": "^5.5.2"
+  },
+  "dependencies": {
+    "@aws-sdk/client-route-53": "^3.600.0"
   }
 }
