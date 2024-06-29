@@ -3,7 +3,6 @@ module.exports = {
     preset: 'ts-jest',
     testEnvironment: 'node',
     testMatch: ['**/*.test.ts'],
-    verbose: true, // Mostrar detalhes dos testes
     reporters: [
       'default',
       ['jest-junit', {
